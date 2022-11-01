@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="chat">
+	<select id="getChatRoom" resultClass="ChatRoomVO" parameterClass="String">
+		select * from chatr where seller_id = #data# or buyer_id = #data#
+		order by chatr_code asc
+	</select>
+	
+	<select id="getChatContents" resultClass="ChatContVO" parameterClass="String">
+		select * from chatc where chatr_code = #data# order by chatc_send
+	</select>
+	
+	<!-- 로그인한 회원의 채팅방별 마지막 대화 가져오기 -->
+	<select id="getLastChatContentByRoom" resultClass="ChatContVO" parameterClass="String">
+		select * from chatc where chatc_send in (
+    	select MAX(a.chatc_send) chatc_send
+    	from (
+        select * from chatc where chatr_code in 
+        	(select chatr_code from chatr where seller_id = #data# or buyer_id = #data#)
+        ) a
+			group by chatr_code
+		)
+		order by chatr_code asc
+	</select>
+	
+	<!-- 입력한 채팅내용 저장 -->
+	<insert id="setChatContent" parameterClass="Map">
+		insert into chatc (chatc_code, chatr_code, mpost_code,
+			seller_id, buyer_id, chatc_cnt, chatc_send, chatc_check)
+		values(chatc_seq.nextval, #chatr_code#, #mpost_code#,
+			#seller_id#, #buyer_id#, #chatc_cnt#, sysdate, 'N')
+	</insert>
+	
+	<!-- 채팅방별 읽지 않은 채팅 수 -->
+	<select id="getUnreadChatCnt" resultClass="HashMap" parameterClass="String">
+		select a.chatr_code chatr_code, count(a.chatc_check) chatc_check
+		from
+		(
+			select * from chatc where chatr_code in
+			(
+				select chatr_code from chatr where buyer_id= #data# or seller_id= #data#
+			)
+		) a
+		where (a.buyer_id != #data# or a.seller_id != #data#) and a.chatc_check = 'N'
+		group by a.chatr_code
+	</select>
+	
+	<update id="processChatRead" parameterClass="HashMap">
+		update chatc set chatc_check = 'Y' where chatr_code = #chatr_code#
+	</update>
+	
+	<!-- 약속한 일정을 등록하는 쿼리 -->
+	<update id="registerPromise" parameterClass="HashMap">
+		update chatr set chatr_dt = to_date(#chatr_dt#, 'YYYYMMDDHH24MI') 
+		where chatr_code = #chatr_code#
+	</update>
+	
+	<!-- 약속한 일정을 삭제하는 쿼리 -->
+	<update id="deletePromise" parameterClass="String">
+		update chatr set chatr_dt = null where chatr_code = #chatr_code#
+	</update>
+	
+	<!-- 등록된 약속일정 정보 가져오는 쿼리 -->
+	<select id="getRegisteredPromise" parameterClass="String" resultClass="String">
+		select to_char(chatr_dt, 'YYYY-MM-DD HH:MI') from chatr where chatr_code = #data#
+	</select>
+	
+	<!-- 사용자 정보 가져오는 쿼리 -->
+	<select id="getMemberInfo" parameterClass="String" resultClass="memberVO">
+		select * from member where mem_id = #data#
+	</select>
+	
+	<!-- 채팅방 생성하는 쿼리 -->
+	<update id="insertChatRoom" parameterClass="map">
+		INSERT INTO CHATR(CHATR_CODE,MPOST_CODE,SELLER_ID,BUYER_ID,CHATR_DT)
+		VALUES(CHATR_SEQ.NEXTVAL, #mpost_code#, #seller_id#, #buyer_id#, SYSDATE)
+	</update>
+</sqlMap>

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+#realBody {
+	float : left;
+	width : 1500px;
+	/* margin-left: 370px; */
+}
+.ptitle{
+	width : 140px;
+	height: 40px;
+	float : left;
+	font-size: 1.1em;
+	padding: 5px;
+}
+.input{
+	border : 1px solid lightgray;
+	width : 400px;
+	height: 40px;
+	font-size: 1.1em;
+}
+#total{
+	clear : both;
+	float: left;
+}
+#but2{
+	width : 400px;
+	height: 40px;
+	float: left;
+	padding: 0px;
+}
+ br{
+	clear : both;
+} 
+#divParent{
+	/* border : 1px solid red; */
+	width : 700px;
+	height: auto;
+	float: left;
+	padding: 10px;
+	margin-left: 70px;
+}
+#memImage{
+	border-radius: 50%;
+	float: left;
+	width : 130px;
+	height: 130px;
+	margin-top: 130px;
+}
+#profileimg{
+	padding: 10px;
+	float: left;
+	margin-left: 10px;
+	height: 150px;
+}
+#modifyBut{
+	margin-left: 20px;
+}
+#whole{
+	margin-top: 30px;
+	margin-left: 200px;
+}

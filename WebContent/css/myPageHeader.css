@@ -1,0 +1,137 @@
+@charset "UTF-8";
+body {
+		min-width : 1000px;
+	}
+nav, section {
+	box-sizing : border-box;
+	margin : 10px;
+}
+nav {
+	width : calc(15% - 1px);
+	float : left;
+	height : 2000px;
+	margin-left : 100px;
+}
+#mpBarH {
+	background : rgb(224,224,224);
+	height : 930px;
+	padding : 10px;
+}
+#mpBarH div {
+	padding : 5px;
+}
+section {
+	width : calc(73% - 1px);
+	float : right;
+	margin-right : 100px;
+	margin-top : 0px;
+}
+#mpBarV {
+	background : rgb(39,174,96);
+	height : 85px;
+}
+ul {
+	list-style-type : none;
+	text-align : center;
+	margin : 10px 0px 0px 0px;
+}
+li {
+	padding : 30px;
+	float : left;
+	margin-left : 18%;
+	font-size : 1.2em;
+	font-weight : bold;
+}
+ul a {
+	color : white;
+	text-decoration : none;
+}
+#mpBarH a {
+	color : black;
+	text-decoration : none;
+}
+.profileBox {
+	width : 90px;
+	height : 90px;
+	overflow : hidden;
+	margin-left : 33%;
+	margin-top : 15px;
+}
+.profileImg {
+	width : 100%;
+	height : 100%;
+	border-radius : 100%;
+	object-fit : cover;
+}
+
+#pay {
+	margin : 10px;
+	background : white;
+	border : 2px solid green;
+	border-radius : 15px;
+	height : 60px;
+	font-size : 0.9em;
+	padding : 30px;
+}
+#logo {
+	width : 45px;
+	height : 45px;
+	padding-right : 1px;
+	vertical-align : middle;
+}
+#pay a {
+	margin-top : 10px;
+	color : green;
+	font-weight : bold;
+}
+#nickName {
+	font-weight : bold;
+	text-align : center;
+}
+#addr {
+	font-size : 0.9em;
+	text-align : center;
+}
+iframe {
+	border : 1px solid transparent;
+	width : 100%;
+	height : 1900px;
+	margin-top : 25px;
+}
+.d5 {
+	margin-left : 10px;
+}
+#h3text {
+	margin-left : 15px;
+	font-size : 1.4em;
+	font-weight : bold;
+}
+#logo2 {
+	width : 400px;
+}
+#myModal .modal-body {
+	margin : 10px auto;
+	font-size : 0.8em;
+	font-weight : bold;
+	color : teal;
+}
+#modText {
+	text-align : center;
+	font-size : 1.2em;
+	font-weight : bold;
+	color : black;
+}
+#frEmail {
+	width : 400px;
+	border : 1px solid teal;
+}
+#accountNum {
+	width : 450px;
+	height : 40px;
+}
+#realLogo {
+	width : 200px;
+	margin : 20px;
+	margin-top : 30px;
+	margin-left : 100px;
+}

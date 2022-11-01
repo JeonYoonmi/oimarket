@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.spanCode {
+	font-weight : bold;
+}
+#realLogo {
+	width : 200px;
+	margin : 20px;
+	margin-top : 30px;
+	margin-left : 100px;
+}
+#pome {
+	width : 100px;
+	margin-left : 40%;
+	float : left;
+}
+#noticeTitle {
+	padding-top : 30px;
+	padding-left : 30px;
+}

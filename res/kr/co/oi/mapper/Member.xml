@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member">
+	<select id="loginMember" parameterClass="map" resultClass="memberVO">
+		SELECT * FROM MEMBER
+		WHERE MEM_ID=#MEM_ID# AND MEM_PW=#MEM_PW#
+	</select>
+
+	<select id="idCheck" parameterClass="string" resultClass="string">
+		SELECT MEM_ID FROM MEMBER
+		WHERE MEM_ID=#mem_id#
+	</select>
+	
+	<select id="nickCheck" parameterClass="string" resultClass="string">
+		SELECT MEM_NICK FROM MEMBER
+		WHERE MEM_NICK=#mem_nick#
+	</select>
+	
+	<update id="insertMember" parameterClass="memberVO">
+		INSERT INTO MEMBER (MEM_ID, MEM_PW, MEM_TEL, MEM_NICK, MEM_EMAIL, MEM_ADDR1)
+		VALUES(#mem_id#, #mem_pw#, #mem_tel#, #mem_nick#, #mem_email#, #mem_addr1#)
+	</update>
+	
+ 	 <update id="updateMember" parameterClass="memberVO">
+		UPDATE MEMBER SET MEM_PW = #mem_pw#, MEM_TEL = #mem_tel#, MEM_NICK = #mem_nick#,
+		MEM_EMAIL = #mem_email#, MEM_ADDR1 = #mem_addr1# WHERE MEM_ID = #mem_id#
+	</update>
+	
+	<delete id="deleteMember" parameterClass="map">
+		DELETE FROM MEMBER
+		WHERE MEM_ID=#mem_id#
+		AND MEM_PW=#mem_pw#
+	</delete>
+	
+	<update id="updateEvent" parameterClass="string">
+		UPDATE MEMBER
+		SET MEM_EVENT = 1
+		WHERE MEM_ID = #data#
+	</update>
+</sqlMap>

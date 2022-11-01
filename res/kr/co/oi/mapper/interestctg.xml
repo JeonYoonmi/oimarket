@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="ctg">
+	<insert id="insertInterestCtg" parameterClass="map">
+		INSERT INTO ITRST_CTG
+		VALUES(ITRST_SEQ.NEXTVAL, #ctg_code#, #mem_id#)
+		<selectKey keyProperty="num" resultClass="int">
+			select itrst_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	<!--  
+	<select id="cntInterestCtg" resultClass="int" parameterClass="String">
+		SELECT COUNT(*) FROM ITRST_CTG WHERE MEM_ID = #mem_id#
+	</select>-->
+	
+	<select id="selectInterestCtg" parameterClass="String" resultClass="ctgVO">
+		SELECT * FROM ITRST_CTG WHERE MEM_ID = #data#
+	</select>
+	
+	<delete id="deleteInterestCtg" parameterClass="String">
+		DELETE * FROM ITRST_CTG WHERE MEM_ID = #mem_id#
+	</delete>
+</sqlMap>

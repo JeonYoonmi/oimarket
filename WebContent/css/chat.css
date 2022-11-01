@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+body {
+	min-width: 800px;
+}
+
+#div_dep1 { /* 채팅 화면 상단 */
+	height : 30px;
+	border-bottom : 2px solid #E0E0E0;
+}
+
+#div_dep2 { /* 좌측 */
+	box-sizing : border-box;
+	width : calc(5% - 1px);
+	height : 600px;
+	float : left;
+	background-color : #E0E0E0;
+}
+
+#div_dep2_1 {
+	text-align : center;
+}
+
+#div_dep3 { /* 대화상대 목록 */
+	box-sizing : border-box;
+	width : calc(25% - 1px);
+	height : 600px;
+	float : left; 
+	border-right : 2px solid #E0E0E0;
+	vertical-align: middle;
+}
+
+#div_dep3_1 { 
+	box-sizing : border-box;
+	width : 100%;
+	height : calc(10% - 1px);
+	border-bottom : 2px solid #E0E0E0;
+}
+
+#div_dep3_2 {
+	box-sizing : border-box;
+	width : 100%;
+	height : calc(90% - 1px);
+}
+
+#div_dep4 { /* 약속잡기, 송금하기 버튼 있는 영역 */
+	box-sizing : border-box;
+	width : calc(70% - 1px);
+	height : 600px;
+	float : left; 
+}
+
+#div_dep4_1 {
+	box-sizing : border-box;
+	width : 100%;
+	height : calc(10% - 1px);
+	border-bottom : 2px solid #E0E0E0;  
+}
+
+#div_dep4_1_1 {
+	display : inline-block;
+	width : 300px;
+	height : 100%;
+}
+
+#div_dep4_2 {
+	box-sizing : border-box;
+	width : 100%;
+	height : calc(83% - 1px);
+	overflow : auto;
+}
+
+#div_dep4_3 {
+	box-sizing : border-box;
+	width : 100%;
+	height : calc(7% - 1px);
+	background-color : #E0E0E0;
+}
+
+#img_logo {
+	display : inline-block;
+	width : 80%;
+	height : 10%;
+}
+
+#span_dep3_1 {
+	font-size : 1.1em;
+	font-weight: bold;
+	float : left;
+	margin : 12px;
+}
+
+#btn_eval { /* 평가하기 버튼 */
+	margin : 10px;
+	float : right;
+}
+
+#chat_content {
+	display : inline-block;
+	margin : 2px;
+	width : 90%;
+	height : 90%;
+	border-radius : 15px;
+}
+
+#btn_send {
+	height : 80%;
+	background-color : #62DF3C;
+	border-radius: 10px;
+	border : none;
+	font-weight: bold;
+}
+#btn_send:hover {
+	background-color : #33FF33;
+}
+#btn_send:active {
+	background-color : #62DF3C;
+}
+
+#img_profile {
+	width : 50px;
+	height : 50px;
+}
+
+#img_oipome {
+	height : 50px;
+	width : 50px;
+}
+
+#span_nick, #span_temp {
+	display : inline-block;
+	margin : 15px;
+	font-weight: bold;
+	font-size : 1.1em;
+}
+
+#btn_depo, #btn_prom {
+	margin : 8px 10px;
+}
+
+.img_chatRoom { /* 채팅방 목록에 표시되는 프로필 사진 */
+	clear : both;
+	width : 50px;
+	height : 50px;
+}
+
+.p_chatRoom {
+	margin : 0px 10px;	
+}
+
+br {
+	clear : both;
+}
+
+.p_lastChatCont {
+	clear : both;
+}
+
+/* 채팅 목록 Style */
+.li_myChatContent {
+	text-align : right;
+}
+
+.li_yourChatContent {
+	text-align : left;
+}

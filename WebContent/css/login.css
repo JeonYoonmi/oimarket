@@ -1,0 +1,39 @@
+@charset "UTF-8";
+#logintitle{
+	text-align: center;
+	padding: 50px;
+}
+
+.loginlabel{
+	display: inline-block;
+	width: 130px;
+	height: 30px;
+	margin-bottom: 15px;
+}
+
+#loginform{
+	text-align: left;
+	margin-left: 350px;
+}
+
+.logintext{
+	height: 38px;
+	width: 300px;
+}
+
+.loginBtn{
+	width: 435px;
+	height: 50px;
+}
+
+#loginBtn{
+	margin-bottom: 10px;
+}
+
+#joinBtn{
+	margin-left: 350px;
+}
+
+#chk{
+	padding-left: 130px;
+}

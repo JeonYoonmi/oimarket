@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="mpost">
+	<select id="mpostList" parameterClass="map" resultClass="hashmap">
+		SELECT A.*, 
+		(SELECT MPOSTIMG_URL FROM MPOSTIMG B WHERE A.MPOST_CODE=B.MPOST_CODE AND ROWNUM=1) AS MPOSTIMG_URL,
+		C.*
+		FROM MPOST A, MEMBER C
+		WHERE A.SELLER_ID = C.MEM_ID
+		<isNotEmpty prepend="and" property="mem_range">
+			A.MPOST_ADDR LIKE
+			(CASE  WHEN #mem_range# = 1 THEN #mem_addr#
+			WHEN #mem_range# = 2 THEN SUBSTR(#mem_addr#, INSTR(#mem_addr#, '구'))||'%'
+			WHEN #mem_range# = 3 THEN SUBSTR(#mem_addr#, INSTR(#mem_addr#, ' '))||'%'
+			ELSE '%' END)
+		</isNotEmpty>
+		<isNotEmpty prepend="and" property="ctg_code">
+			A.CTG_CODE=#ctg_code#
+		</isNotEmpty>
+		ORDER BY A.MPOST_CRT DESC
+	</select>
+	
+	<select id="selectMpost" parameterClass="String" resultClass="hashmap">
+		SELECT A.*, B.*, C.*
+		FROM MPOST A, MEMBER B, CTG C
+		WHERE A.SELLER_ID = B.MEM_ID
+		AND A.CTG_CODE = C.CTG_CODE
+		AND A.MPOST_CODE = #data#
+	</select>
+	
+	<select id="selectMpostImg" parameterClass="String" resultClass="mpostImgVO">
+		SELECT *
+		FROM MPOSTIMG
+		WHERE MPOST_CODE = #data#
+	</select>
+	
+	<update id="addHit" parameterClass="String">
+		UPDATE MPOST
+		SET MPOST_HIT = MPOST_HIT+1
+		WHERE MPOST_CODE = #data#
+	</update>
+	
+	<select id="zzimCount" parameterClass="String" resultClass="int">
+		SELECT COUNT(*)
+		FROM ZZIM
+		WHERE MPOST_CODE = #data#
+	</select>
+	
+	<select id="chatCount" parameterClass="String" resultClass="int">
+		SELECT COUNT(*)
+		FROM CHATR
+		WHERE MPOST_CODE = #data#
+	</select>
+	
+	<update id="insertMpost" parameterClass="map">
+		INSERT INTO MPOST(MPOST_CODE, SELLER_ID, CTG_CODE, MPOST_TITLE, MPOST_ADDR, MPOST_PRICE, MPOST_CNT, MPOST_CRT)
+		VALUES(MPOST_SEQ.NEXTVAL, #seller_id#, #ctg_code#, #mpost_title#, #mpost_addr#, #mpost_price#, #mpost_cnt#, SYSDATE)
+	</update>
+	
+	<update id="modifyMpost" parameterClass="map">
+		UPDATE MPOST
+		SET MPOST_TITLE = #mpost_title#, CTG_CODE = #ctg_code#, MPOST_PRICE = #mpost_price#, MPOST_CNT = #mpost_cnt#, MPOST_MDF = SYSDATE
+		WHERE MPOST_CODE = #mpost_code#
+	</update>
+	
+	<delete id="deleteMpost" parameterClass="String">
+		DELETE MPOST
+		WHERE MPOST_CODE = #data#
+	</delete>
+</sqlMap>

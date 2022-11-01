@@ -1,0 +1,24 @@
+@charset "UTF-8";
+#footer{
+	background: lightgray;
+}
+
+#logo_black{
+	width: 10%;
+	height: 10%;
+	margin: 30px;
+	vertical-align: top;
+}
+
+#fp1{
+	display: inline-block;
+	padding-top: 17px;
+}
+
+#p2{
+	float: right;
+	display: inline-block;
+	padding-top: 17px;
+	padding-right: 100px;
+	
+}

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+#realBody {
+	margin-top : 0px;
+	float : left;
+	width : 1500px;
+}
+#dparent{
+	height: 900px;
+	width : 59%;
+	display: inline-block;
+	padding: 5px;
+	margin-left: 300px;
+}
+#title{
+	font-size: 2.2em;
+	text-align: center;
+}
+hr{
+	border: 2px solid gray;
+}
+.ctgimg{
+	width : 130px;
+	height: 120px;
+}
+#ctg1, #ctg2, #ctg3, #ctg4, #ctg5, #ctg6, #ctg7, #ctg8, #ctg9, #ctg10, #ctg11, #ctg12, #ctg13, #ctg14, #ctg15, #ctg16{
+	/*border: 1px solid blue;*/
+	width : 140px;
+	height: 150px;
+	padding: 20px;
+	margin-left: 60px;
+	margin-top: 10px;
+}
+#ctg1, #ctg5, #ctg9, #ctg13{
+	clear : both;
+	float: left;
+	margin-left: 70px;
+
+}
+#ctg2, #ctg3, #ctg4, #ctg5, #ctg6, #ctg7, #ctg8, #ctg10, #ctg11, #ctg12, #ctg14, #ctg15, #ctg16{
+	float : left;
+}
+
+.label{
+	margin-left : 20px;
+	/*border : 1px solid orange;*/
+	width : 130px;
+}
+
+#but{
+	clear : both;
+	float: left;
+	margin-top : 80px;
+	margin-left: 400px;
+}
+h2 {
+	text-align : center;
+	letter-spacing : 5px;
+	height: 50px;
+	margin : 10px auto;
+}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+#jointitle{
+	text-align: center;
+	padding: 50px;
+}
+
+.joinlabel{
+	display: inline-block;
+	width: 130px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+#joinBtn{
+	width: 570px;
+	height: 50px;
+}
+
+#joinform{
+	text-align: left;
+	margin-left: 35%;
+}
+
+.jointext{
+	height: 38px;
+	width: 300px;
+}
+
+.idchk, .nickchk, .addrbtn{
+	width: 130px;
+}
+

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+#realBody{
+	float: left;
+	width: 1500px;
+}
+#banner {
+	margin : 10px auto;
+	background : rgb(255,240,204);
+	width : 60%;
+	height : 150px;
+	padding : 20px;
+}
+#result {
+	margin : 10px auto;
+	width : 67%;
+	margin-top: 0px;
+	padding : 10px;
+	padding-left : 40px;
+	
+}
+h2 {
+	text-align : center;
+	letter-spacing : 5px;
+	height: 50px;
+	margin : 10px auto;
+	width : 150px;
+}
+hr {
+	width : 65%;
+}
+.profileBox1 {
+	width : 150px;
+	height : 150px;
+	overflow : hidden;
+	float : left;
+	margin-left: 0px;
+}
+#profileImg1 {
+	width : 80%;
+	height : 80%;
+	border-radius : 100%;
+	object-fit : cover;
+	float : left;
+}
+label {
+	display : inline-block;
+	/*border : 1px solid red;*/
+	padding : 8px;
+	margin : 5px;
+	width : 150px;
+}
+#nick1, #allData {
+	height : 75%;
+	font-size : 1.2em;
+	float : left;
+}
+#nick1 {
+	width : 230px;
+	float : left;
+	font-weight : bold;
+	margin-left : 50px;
+}
+#allData {
+	width : 350px;
+	float : right;
+}
+#putRight {
+	text-align : right;
+	/* margin-left : 50px; */
+	float : right;
+}
+#month {
+	float : left;
+	margin : 10px;
+	width : 200px;;
+	height : 40px;
+	border-radius : 10px;
+	margin-right : 0px;
+}
+#ment {
+	margin : 10px;
+	margin-left : 0px;
+	text-align : center;
+	font-weight : bold;
+	background : rgb(94,94,94);
+	color : white;
+	width : 700px;
+	float : left;
+	height : 40px;
+	border-radius : 10px;
+	padding-top : 7px;
+}
+#data {
+	clear : both;
+	padding : 20px 60px 20px 40%;
+}
